@@ -14,8 +14,7 @@ Fuse Skeletons is a free Blender Plugin. Basically it fuses all selected skeleto
 any duplicates with the same name and any bones which are not duplicates it parents to the skeleton you've chosen to fuse to.
 
 ### What is the Original Skeleton/Base Skeleton?
-So the original or base skeleton are just terms I'm using to describe the skeleton
-you've selected fuse to.
+So the original or base skeleton are just interchangeable terms I'm using to describe the skeleton you've selected to fuse to.
 
 ### What is considered a duplicate bone?
 A duplicate bone is considered a bone on an armature/skeleton that fulfills the following criteria:

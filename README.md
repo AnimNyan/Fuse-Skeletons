@@ -25,3 +25,6 @@ A duplicate bone is considered a bone on an armature/skeleton that fulfills the 
 ### How does it do this parenting of non duplicate bones?
 The plugin looks for the parent of the the non duplicate bone let's say it's joint_Head_01.001, the plugin then takes away the suffix so
 the name is joint_Head_01 and then it parents the non duplicate bone to joint_Head_01 the name without the suffix from the original skeleton.
+
+## Video Demo and Tutorial for UEShaderScript (Tutorial to be added)
+[![Fuse Skeletons Demo](https://i.ytimg.com/vi/Bq9n8KiK7qQ/maxresdefault.jpg)](https://www.youtube.com/watch?v=Bq9n8KiK7qQ "Fuse Skeletons Demo")

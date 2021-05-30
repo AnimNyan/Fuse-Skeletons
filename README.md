@@ -5,7 +5,7 @@ First things first, I have a discord server for questions, support and bugs find
 
 # Installation
 ### To install Fuse Skeletons:
-1. Go here: https://github.com/AnimNyan/Fuse-Skeletons/releases Right click on "Fuse_Skeletons_v.X.X.X.zip" > Save Link As do NOT unzip it.
+1. Go here: https://github.com/AnimNyan/Fuse-Skeletons/releases > Right click on "Fuse_Skeletons_v.X.X.X.zip" > Save Link As do NOT unzip it.
 2. Open Blender and click Edit > Preferences > Add-Ons > Install > in the file explorer find "Fuse_Skeletons_v.X.X.X.zip" and select it.
 3. In the Add-Ons search, search for Fuse Skeletons and enable the Add On to complete the installation.
 

@@ -1,20 +1,13 @@
-# ##### BEGIN GPL LICENSE BLOCK #####
+# ##### BEGIN CC0 LICENSE BLOCK #####
 #
-#  This program is free software; you can redistribute it and/or
-#  modify it under the terms of the GNU General Public License
-#  as published by the Free Software Foundation; either version 2
-#  of the License, or (at your option) any later version.
+# CC0 is a public domain dedication from Creative Commons. A work released under CC0 is 
+# dedicated to the public domain to the fullest extent permitted by law. If that is not 
+# possible for any reason, CC0 also provides a simple permissive license as a fallback. 
+# Both public domain works and the simple license provided by CC0 are compatible with the GNU GPL.
 #
-#  This program is distributed in the hope that it will be useful,
-#  but WITHOUT ANY WARRANTY; without even the implied warranty of
-#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#  GNU General Public License for more details.
+#  You should have received a copy of the Creative Commons Zero Licence
 #
-#  You should have received a copy of the GNU General Public License
-#  along with this program; if not, write to the Free Software Foundation,
-#  Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
-#
-# ##### END GPL LICENSE BLOCK #####
+# ##### END CC0 LICENSE BLOCK #####
 
 # by Anime Nyan
 
@@ -26,17 +19,17 @@ bl_info = {
     "version": (1, 0, 0),
     "blender": (2, 92, 0),
     "location": "3D View > Properties > Fuse Skel",
-    "description": "Adds the ability to save and load shader maps for 3d Meshes exported from Unreal Engine games and adds default preset shader maps for your convenience ",
+    "description": "Adds ability to join Skeletons together, delete duplicate bones with the same name and reparent bones which are not duplicates to bones to the original skeleton.",
     "warning": "",
-    "wiki_url": "",
-    "category": "Skeletons",
-    "tracker_url": "https://github.com/AnimNyan/UEShaderScript"
+    "wiki_url": "https://github.com/AnimNyan/Fuse-Skeletons/wiki",
+    "category": "Skeleton",
+    "tracker_url": "https://github.com/AnimNyan/Fuse-Skeletons"
 }
 
 """
 Version': '1.0.0' written by Anime Nyan
 
-Adds two panels one in the Shader Editor View to save different preset shader maps and one in the 3D View to load shader maps.
+Adds one panel in the 3d View to join Skeletons together, delete duplicate bones with the same name and reparent bones which are not duplicates to bones to the original skeleton.
 """
 
 

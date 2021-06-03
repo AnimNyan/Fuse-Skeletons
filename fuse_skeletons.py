@@ -90,6 +90,7 @@ class FUSESKELETONS_OT_fuse_selected(bpy.types.Operator):
             bpy.ops.object.mode_set(mode='EDIT') 
 
             #iterate through the active object which should be a skeleton's edit bones
+            #and record all the active objects bones
             for bone in bpy.context.active_object.data.edit_bones:
                 #debug
                 #print("\n\nbone.name", bone.name)
@@ -98,9 +99,9 @@ class FUSESKELETONS_OT_fuse_selected(bpy.types.Operator):
                 #and they are much larger
                 original_skeleton_bones_list.append(bone.name)
 
-
-            #--------------------join all armatures together
-            for object in scene.objects:
+             
+            #--------------------join all selected armatures together
+            for object in bpy.context.selected_objects:
                 #whatever objects you want to join...
                 #in this case only armatures
                 #should be joined
@@ -151,7 +152,8 @@ class FUSESKELETONS_OT_fuse_selected(bpy.types.Operator):
             #----------------------delete all bones that have the following pattern .001 .002 .003 
             #and if their children do not have .001 .002 .003 reparent them to the original base skeleton
 
-            #iterate through the active object which should be a skeleton's edit bones
+            #iterate through the active object which should be the skeleton 
+            #which has joined all other skeletons to it. Iterate through the edit bones
             #and unparent all children bones that have parents with .001 or .002 in them
             #and were not in the original skeletons bone list
             for bone in bpy.context.active_object.data.edit_bones:

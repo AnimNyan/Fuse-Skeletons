@@ -19,7 +19,7 @@ bl_info = {
     "version": (1, 0, 0),
     "blender": (2, 92, 0),
     "location": "3D View > Properties > Fuse Skel",
-    "description": "Adds ability to join Skeletons together, delete duplicate bones with the same name and reparent bones which are not duplicates to bones to the original skeleton.",
+    "description": "Adds ability to join selected Skeletons together, delete duplicate bones with the same name and reparent bones which are not duplicates to bones to the original skeleton.",
     "warning": "",
     "wiki_url": "https://github.com/AnimNyan/Fuse-Skeletons/wiki",
     "category": "Skeleton",

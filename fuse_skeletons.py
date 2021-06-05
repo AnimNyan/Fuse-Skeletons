@@ -10,7 +10,7 @@ import time
 #------------code for drawing main panel in the 3D View
 #don't register this class it is not a bpy panel or type so
 #it does not need to be registereds
-class FUSESKELETONS_main_panel(bpy.types.Panel):
+class FUSESKELETONS_PT_main_panel(bpy.types.Panel):
     bl_label = "Fuse Skeletons"
     bl_idname = "FUSESKELETONS_main_panel"
     bl_space_type = 'VIEW_3D'

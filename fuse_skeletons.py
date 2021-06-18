@@ -313,7 +313,7 @@ def log(msg):
     print("[Fuse Skeletons]:", msg)
 
 
-classes = [FUSESKELETONS_main_panel, FUSESKELETONS_OT_write_select_object,
+classes = [FUSESKELETONS_PT_main_panel, FUSESKELETONS_OT_write_select_object,
 FUSESKELETONS_OT_fuse_selected, FUSESKELETONS_OT_show_message]
 
 def register():

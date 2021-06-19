@@ -34,7 +34,19 @@ class FUSESKELETONS_OT_write_select_object(bpy.types.Operator):
     bl_label = "Select Skeleton"
     bl_description = "Show Message for UEShaderScript"
     def available_objects(self,context):
-        items = [(str(i),x.name,x.name) for i,x in enumerate(bpy.data.objects)]
+        items = []
+
+        #iterate over all objects
+        #in scene and add an index to them
+        for scene_object_index, scene_object in enumerate(bpy.data.objects):
+            
+            #only show the armatures in the select list
+            #as we can only fuse skeletons together not other 
+            #scene objects
+            if (scene_object.type == "ARMATURE"):
+                current_array_item = (str(scene_object_index), scene_object.name, scene_object.name)
+                items.append(current_array_item)
+        
         return items
 
     select_objects: bpy.props.EnumProperty(

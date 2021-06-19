@@ -12,7 +12,7 @@ import time
 #it does not need to be registereds
 class FUSESKELETONS_PT_main_panel(bpy.types.Panel):
     bl_label = "Fuse Skeletons"
-    bl_idname = "FUSESKELETONS_main_panel"
+    bl_idname = "FUSESKELETONS_PT_main_panel"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'UI'
     bl_category = "Fuse Skel"
@@ -24,31 +24,24 @@ class FUSESKELETONS_PT_main_panel(bpy.types.Panel):
         layout.label(text ="and the children will be parented to the base skeleton")
         layout.separator()
         layout.label(text ="Select Skeleton to Fuse to:")
-        layout.operator_menu_enum("fuseskeletons.select_object", "select_objects")
+        layout.operator_menu_enum("fuseskeletons.write_select_object", "select_objects")
 
         layout.operator("fuseskeletons.fuse_selected")
 
 
-
-
-
 class FUSESKELETONS_OT_write_select_object(bpy.types.Operator):
-    bl_idname = "fuseskeletons.select_object"
+    bl_idname = "fuseskeletons.write_select_object"
     bl_label = "Select Skeleton"
     bl_description = "Show Message for UEShaderScript"
     def available_objects(self,context):
         items = [(str(i),x.name,x.name) for i,x in enumerate(bpy.data.objects)]
         return items
-    select_objects = bpy.props.EnumProperty(
+
+    select_objects: bpy.props.EnumProperty(
         items = available_objects, 
         name = "Available Objects",
         description = "Available Objects"
     )
-    
-
-    @classmethod
-    def poll(cls, context):
-        return True
     
     def execute(self,context):
         #example behaviour, int(self.select_objects)] gives you the index of the selected object

@@ -16,7 +16,7 @@ from . import fuse_skeletons
 bl_info = {
     "name": "Fuse Skeletons",
     "author": "Anime Nyan",
-    "version": (1, 0, 2),
+    "version": (1, 1, 0),
     "blender": (2, 92, 0),
     "location": "3D View > Properties > Fuse Skel",
     "description": "Adds ability to join selected Skeletons together, delete duplicate bones with the same name and reparent bones which are not duplicates to bones to the original skeleton.",
@@ -27,7 +27,9 @@ bl_info = {
 }
 
 """
-Version': '1.0.1' written by Anime Nyan
+Version': '1.1.0' written by Anime Nyan
+
+Updated for Blender 4.0
 
 Adds one panel in the 3d View to join Skeletons together, delete duplicate bones with the same name and reparent bones which are not duplicates to bones to the original skeleton.
 """

@@ -117,33 +117,41 @@ class FUSESKELETONS_OT_fuse_selected(bpy.types.Operator):
             #which can only be done in object mode 
             bpy.ops.object.mode_set(mode='OBJECT')
 
-            #If you use a copy of the context, you can change some attributes 
-            #and pass it to an operator without affecting the actual context
-            #this is much faster for performance
-            #because blender does not need to update the scene every time if 
-            #join is called in a loop
-            #also it keeps the currently selected objects intact
-            ctx = bpy.context.copy()
 
-            #Make the active object
-            #one of the objects to join
-            #otherwise when trying to join it won't know which 
-            #skeleton to join to
-            #set the copy of the context's active object
-            #to the current context's active object
-            #this is because when joining skeletons it is the active object
-            #that is the skeleton every other skeleton is joined to
-            ctx['active_object'] = active_object
 
-            ctx['selected_objects'] = armatures
+            #--------------THESE METHODS ARE ALL DEPRECATED IN BLENDER 4.0 new method of overriding context
+            # #If you use a copy of the context, you can change some attributes 
+            # #and pass it to an operator without affecting the actual context
+            # #this is much faster for performance
+            # #because blender does not need to update the scene every time if 
+            # #join is called in a loop
+            # #also it keeps the currently selected objects intact
+            # ctx = bpy.context.copy()
 
-            # In Blender 2.8x this needs to be the following instead:
-            ctx['selected_editable_objects'] = armatures
-            #debug
-            #print("armatures before join:", armatures)
-            #print("ctx['selected_editable_objects'] before join:", ctx['selected_editable_objects'])
+            # #Make the active object
+            # #one of the objects to join
+            # #otherwise when trying to join it won't know which 
+            # #skeleton to join to
+            # #set the copy of the context's active object
+            # #to the current context's active object
+            # #this is because when joining skeletons it is the active object
+            # #that is the skeleton every other skeleton is joined to
+            # ctx['active_object'] = active_object
 
-            bpy.ops.object.join(ctx)
+            # ctx['selected_objects'] = armatures
+
+            # # In Blender 2.8x this needs to be the following instead:
+            # ctx['selected_editable_objects'] = armatures
+            # #debug
+            # #print("armatures before join:", armatures)
+            # #print("ctx['selected_editable_objects'] before join:", ctx['selected_editable_objects'])
+
+            #  bpy.ops.object.join(ctx)
+
+            with context.temp_override(active_object=active_object, selected_objects=armatures, selected_editable_objects=armatures):
+                     bpy.ops.object.join()
+
+           
             #debug
             #joined armatures will become <bpy_struct, Object invalid>
             #in the list
